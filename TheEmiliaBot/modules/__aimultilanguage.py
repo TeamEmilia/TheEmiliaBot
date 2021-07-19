@@ -11,10 +11,10 @@ import aiohttp
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from YoneRobot import BOT_ID
-from YoneRobot.helper_extra.aichat import add_chat, get_session, remove_chat
-from YoneRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from YoneRobot import pbot as Yone
+from TheEmiliaBot import BOT_ID
+from TheEmiliaBot.helper_extra.aichat import add_chat, get_session, remove_chat
+from TheEmiliaBot.pyrogramee.pluginshelper import admins_only, edit_or_reply
+from TheEmiliaBot import pbot as Yone
 
 translator = google_translator()
 import requests
@@ -114,8 +114,8 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("yone", "Aco")
-        test = test.replace("yone", "Aco")
+        test = test.replace("emil", "izu")
+        test = test.replace("emil", "izu")
         URL = "https://api.affiliateplus.xyz/api/chatbot?message=hi&botname=@YoneRobot&ownername=@A_viyu"
 
         try:
@@ -177,8 +177,8 @@ async def hmm(client, message):
         # test = emoji.demojize(test.strip())
 
         # Kang with the credits bitches @InukaASiTH
-        test = test.replace("yone", "Aco")
-        test = test.replace("yone", "Aco")
+        test = test.replace("emil", "izu")
+        test = test.replace("emil", "izu")
         URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@YoneRobot&ownername=@A_viyu"
         try:
             r = requests.request("GET", url=URL)
@@ -275,7 +275,7 @@ async def inuka(client, message):
 
 
 @Yone.on_message(
-    filters.regex("yone|yone|Yone|Yone|Yone")
+    filters.regex("Emi|Emilia|emilia|emi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
