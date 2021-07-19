@@ -8,8 +8,8 @@ from pathlib import Path
 from telethon import events
 
 from pymongo import MongoClient
-from YoneRobot import MONGO_DB_URI
-from YoneRobot import telethn
+from TheEmiliaBot import MONGO_DB_URI
+from TheEmiliaBot import telethn
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
@@ -146,7 +146,7 @@ def bot(**args):
     return decorator
 
 
-def YoneRobot(**args):
+def TheEmiliaBot(**args):
     pattern = args.get("pattern", None)
     disable_edited = args.get("disable_edited", False)
     ignore_unsafe = args.get("ignore_unsafe", False)
@@ -182,32 +182,32 @@ def load_module(shortname):
         pass
     elif shortname.endswith("_"):
         import importlib
-        import YoneRobot.events
+        import TheEmiliaBot.events
 
-        path = Path(f"YoneRobot/modules/{shortname}.py")
-        name = "YoneRobot.modules.{}".format(shortname)
+        path = Path(f"TheEmiliaBot/modules/{shortname}.py")
+        name = "TheEmiliaBot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Successfully imported " + shortname)
     else:
         import importlib
-        import YoneRobot.events
+        import TheEmiliaBot.events
 
-        path = Path(f"YoneRobot/modules/{shortname}.py")
-        name = "YoneRobot.modules.{}".format(shortname)
+        path = Path(f"TheEmiliaBot/modules/{shortname}.py")
+        name = "TheEmiliaBot.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.register = register
-        mod.YoneRobot = YoneRobot
+        mod.TheEmiliaBot = TheEmiliaBot
         mod.tbot = telethn
         mod.logger = logging.getLogger(shortname)
         spec.loader.exec_module(mod)
-        sys.modules["YoneRobot.modules." + shortname] = mod
+        sys.modules["TheEmiliaBot.modules." + shortname] = mod
         print("Successfully imported " + shortname)
 
 
-path = "YoneRobot/modules/*.py"
+path = "TheEmiliaBot/modules/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
