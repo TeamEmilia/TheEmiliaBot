@@ -5,11 +5,11 @@ import asyncio
 import os
 import time
 from datetime import datetime
-from YoneRobot import OWNER_ID, DEV_USERS
-from YoneRobot import TEMP_DOWNLOAD_DIRECTORY as path
-from YoneRobot import TEMP_DOWNLOAD_DIRECTORY
+from TheEmiliaBot import OWNER_ID, DEV_USERS
+from TheEmiliaBot import TEMP_DOWNLOAD_DIRECTORY as path
+from TheEmiliaBot import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
-water = './YoneRobot/resources/yone.jpg'
+water = './YoneRobot/resources/Emilia.jpeg'
 client = tbot
 
 @register(pattern=r"^/send ?(.*)")
@@ -36,7 +36,7 @@ async def Prof(event):
         await event.reply("No File Found!")
 
 
-from YoneRobot.events import load_module
+from TheEmiliaBot.events import load_module
 import asyncio
 import os
 from datetime import datetime
