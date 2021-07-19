@@ -1,5 +1,5 @@
-from YoneRobot import telethn as tbot
-from YoneRobot.events import register
+from TheEmiliaBot import telethn as tbot
+from TheEmiliaBot.events import register
 import os
 import asyncio
 import os
