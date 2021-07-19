@@ -9,7 +9,7 @@ from TheEmiliaBot import OWNER_ID, DEV_USERS
 from TheEmiliaBot import TEMP_DOWNLOAD_DIRECTORY as path
 from TheEmiliaBot import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
-water = './YoneRobot/resources/Emilia.jpeg'
+water = './TheEmiliaBot/resources/Emilia.jpeg'
 client = tbot
 
 @register(pattern=r"^/send ?(.*)")
