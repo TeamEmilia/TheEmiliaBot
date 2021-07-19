@@ -1,3 +1,3 @@
-worker: python3 -m EmiliaRobot
-web: python -m EmiliaRobot
+worker: python3 -m TheEmiliaBot
+web: python -m TheEmiliaBot
 ps:scale worker=1
